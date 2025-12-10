@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 5: Event Handling</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        button{
+            border: none;
+            padding: 20px 20px;
+            background-color: rgb(52, 43, 226);
+            color: #fff;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        #box{
+            width: 200px;
+            height: 200px;
+            border: 10px solid black;
+            transition: border-color 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <p id="para">Hello if u click this buttton the text content will changed.</p>
+    <button type="submit" class="btn">Click Here</button>
+
+    <div id="box"></div>
+    
+<script>
+    // Activity 5:-Event Handling 
+
+    // Task 9:-Add a click event listener to a button that changes the text content of a paragraph.
+
+    // Task 10:-Add a mouseover event listener to an element that changes its border color.
+
+    const changePara = document.querySelector(".btn");
+    changePara.addEventListener('click', function(e){
+        e.preventDefault()
+
+        const newPara = document.getElementById('para');
+        newPara.textContent = 'See i told u the para has been Changed By Me!'
+    }) 
+
+    const box = document.getElementById('box');
+    box.addEventListener('mouseover', function(){
+        box.style.borderColor = "red";
+        box.style.backgroundColor = 'yellow'
+    })
+    box.addEventListener('mouseout', function(){
+        box.style.borderColor = "black";
+        box.style.backgroundColor = 'white'
+    })
+</script>
+</body>
+</html>

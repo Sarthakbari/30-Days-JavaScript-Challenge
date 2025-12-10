@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 3</title>
+</head>
+<body>
+    <h1 id="header">Hello World</h1>
+
+    <ul id="list">
+        <li>coffe</li>
+        <li>tea</li>
+        <li>Milk</li>
+    </ul>
+<script>
+    // Activity 3: Removing Elements.
+    // Task 5:-Select an HTML element and remove if from the DOM.
+    const header = document.getElementById("header")
+    header.remove()
+
+    // Task 6:-Removed the last child of a specific HTML element.
+    const list = document.getElementById("list")
+    list.removeChild(list.lastElementChild)
+</script>
+</body>
+</html>
