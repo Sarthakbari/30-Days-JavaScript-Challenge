@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 3:-Keyboard Events</title>
+</head>
+<body>
+    <form >
+        <label for="name">Enter Name:</label>
+        <input type="text" id="myInput">
+    </form>
+    <p id="keyDisplay">press a key</p>
+<script>
+    // Activity 3:-Keyboard Events.
+    // Task 5:-Add a keydown event listener to an input field that logs the key pressed to the console.
+    // task 6:-Add a keyup event listener to an input field that display the current value in a paragraph.
+
+    const input = document.querySelector('#myInput')
+    const keyDisplay = document.querySelector('#keyDisplay')
+
+    input.addEventListener('keydown', function(event){
+        console.log(`Key down: ${event.key}`);
+    })
+
+    input.addEventListener('keyup', function(event){
+        keyDisplay.textContent = `Key released: ${event.key}`;
+    })
+</script>
+</body>
+</html>

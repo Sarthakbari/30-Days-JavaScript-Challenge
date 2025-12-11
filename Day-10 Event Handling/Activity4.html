@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 4:-Form Event</title>
+</head>
+<body>
+    <form id="form">
+        <label for="value">Enter Something</label>
+        <input type="text" id="value">
+        <button class="btn">Submit</button>
+        <p class="para"></p>
+        <label for="option">Choose Options:</label>
+        <select id="option">
+            <option value="option-1">Option 1</option>
+            <option value="option-2">Option 2</option>
+            <option value="option-3">Option 3</option>
+        </select>
+        <p class="selected-value"></p>
+    </form>
+    
+<script>
+    // Activity 4:-Form Event
+    // Task 7:-Add a submit Event listener to a form that prevent the default submission and log the form data to the console.
+    // Task 8:-Add a change event listener to a select dropdown that display the selected value in a paragraph.
+
+    const form = document.querySelector("#form");
+    const input = document.querySelector("#value");
+    const para = document.querySelector(".para");
+    const select = document.querySelector("#option");
+    const selected_option = document.querySelector(".selected-value");
+    
+    form.addEventListener('submit', function(e){
+        e.defaultPrevented()
+        console.log("default prevented");
+        if (input.value.trim() === '') {
+            console.log("You cannot submit empty value");
+        } else {
+            para.innerHTML = ''
+            console.log("Form data:", input.value);
+        }
+    });
+
+    select.addEventListener('change', function(){
+        selected_option.innerHTML = `Selected Value ${select.value}`
+    })
+</script>
+</body>
+</html>

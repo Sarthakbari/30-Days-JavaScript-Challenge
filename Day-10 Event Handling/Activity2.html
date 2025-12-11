@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 2:-Mouse Events</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .box1{
+            height: 200px;
+            width: 200px;
+            border: 7px solid black;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+    <script>
+        // Activity 2:-Mouse Events
+
+        // Task 3:-Add a mouseover event listener to an element that changes its background-color.
+        // Task 4:-Add a mouseout event listener to an element that resets its background-color.
+
+        const box = document.querySelector('.box1')
+        box.addEventListener('mouseover', function () {
+            box.style.borderColor = 'purple';
+            box.style.backgroundColor = 'red';
+        })
+        box.addEventListener('mouseout', function () {
+            box.style.borderColor = 'black';
+            box.style.backgroundColor = 'white';
+        })
+
+    </script>
+</body>
+
+</html>

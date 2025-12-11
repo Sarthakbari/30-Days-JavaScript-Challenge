@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Event Handling</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        button {
+            border-radius: 20px;
+            padding: 20px 20px;
+            background-color: #3a3a3a;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="para">Hey if u click this button the paragraph will changed.</p>
+    <button type="submit" class="btn">Click Here</button>
+
+    <img id="imgToggle" src="img-1.png" alt="img" height="200px" style="display: block;">
+    <button id="toggle-btn">Double Click</button>
+    <script>
+        // Activity 1:-Basic Event Handling
+        // Task 1:-Add a click event listener to a button that changes the text content of a paragraph.
+        // Task 2:-Add a double-click event listener to an image that toggles its visibility.
+
+        const para = document.querySelector('.para');
+        const button = document.querySelector('.btn');
+
+        button.addEventListener('click', function () {
+            para.innerHTML = 'This Paragraph has been changed!'
+        });
+
+        const toggleImg = document.querySelector('#imgToggle');
+        const togglebtn = document.querySelector('#toggle-btn');
+
+        togglebtn.addEventListener('dblclick', function () {
+            if (toggleImg.style.visibility === 'hidden') {
+                toggleImg.style.visibility = 'visible';
+                alert('Img is visible');
+            } else {
+                toggleImg.style.visibility = 'hidden';
+                alert('Img is hidden');
+            }
+        });
+    </script>
+</body>
+
+</html>
